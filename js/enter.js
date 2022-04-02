@@ -4,7 +4,7 @@
 // так вызывается событие
 BX.Vue.event.$emit('BxmakerAuthuserphoneEnterAjaxResponse', {
     request: {}, // данные в запросе
-    response: {}, // полученный результат
+    result: {}, // полученный результат
 });
 */
 
@@ -30,7 +30,7 @@ BX.Vue.event.$on('BxmakerAuthuserphoneEnterAjaxResponse',(data) => {
     // instance.refreshCaptcha();
 
 
-    if(data.response && data.request.method === 'authByPassword')
+    if(data.result.response && data.request.method === 'authByPassword')
     {
         // если есть response, значит все хорошо и удалось
         // проверить подтвреждение и авторизоваться
@@ -39,7 +39,7 @@ BX.Vue.event.$on('BxmakerAuthuserphoneEnterAjaxResponse',(data) => {
             ym(counterId, "reachGoal", "authSuccess");
     }
 
-     if(data.response && data.request.method === 'register')
+     if(data.result.response && data.request.method === 'register')
     {
         // если есть response, значит все хорошо и удалось
         // проверить подтвреждение и зарегистрироваться
@@ -49,16 +49,16 @@ BX.Vue.event.$on('BxmakerAuthuserphoneEnterAjaxResponse',(data) => {
     }
 
 
-    if(data.response && data.request.method === 'authByPhone')
+    if(data.result.response && data.request.method === 'authByPhone')
     {
         // если есть response, значит все хорошо и удалось
         // проверить подтверждение и авторизоваться, зарегистрироваться
-        if(data.response.type  == 'AUTH')
+        if(data.result.response.type  == 'AUTH')
         {
             console.log('AUTH');
             ym(counterId, "reachGoal", "authSuccess");
         }
-        else if(data.response.type == 'REG')
+        else if(data.result.response.type == 'REG')
         {
             console.log('REGISTER');
             ym(counterId, "reachGoal", "registerSuccess");

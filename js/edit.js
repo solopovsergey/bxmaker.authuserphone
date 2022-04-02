@@ -4,7 +4,7 @@
 // так вызывается событие
 BX.Vue.event.$emit('BxmakerAuthuserphoneEditAjaxResponse', {
     request: {}, // данные в запросе
-    response: {}, // полученный результат
+    result: {}, // полученный результат
 });
 */
 
@@ -32,7 +32,7 @@ BX.Vue.event.$on('BxmakerAuthuserphoneEditAjaxResponse',(data) => {
     // instance.showConfirmation();
 
 
-    if(data.response && data.request.method === 'checkConfirmation')
+    if(data.result.response && data.request.method === 'checkConfirmation')
     {
         // если есть response, значит все хорошо и в нем сообщение об успешности выполнения операции
         console.log('PHONE_IS_CHANGED');

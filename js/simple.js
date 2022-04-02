@@ -4,7 +4,7 @@
 // так вызывается событие
 BX.Vue.event.$emit('BxmakerAuthuserphoneSimpleAjaxResponse', {
     request: {}, // данные в запросе
-    response: {}, // полученный результат
+    result: {}, // полученный результат
 });
 */
 
@@ -30,17 +30,17 @@ BX.Vue.event.$on('BxmakerAuthuserphoneSimpleAjaxResponse',(data) => {
     // instance.refreshCaptcha();
 
 
-    if(data.response && data.request.method === 'checkConfirmation')
+    if(data.result.response && data.request.method === 'checkConfirmation')
     {
         // если есть response, значит все хорошо и удалось
         // проверить подтвреждение и авторизоваться, зарегистрироваться
 
-        if(data.response.type  == 'AUTH')
+        if(data.result.response.type  == 'AUTH')
         {
             console.log('AUTH');
             ym(counterId, "reachGoal", "authSuccess");
         }
-        else if(data.response.type == 'REG')
+        else if(data.result.response.type == 'REG')
         {
             console.log('REGISTER');
             ym(counterId, "reachGoal", "registerSuccess");

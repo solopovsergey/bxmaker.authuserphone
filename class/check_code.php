@@ -1,6 +1,6 @@
 <?
 
-// пример обработчика проверки кода и авторизации / авторегистрации
+// РїСЂРёРјРµСЂ РѕР±СЂР°Р±РѕС‚С‡РёРєР° РїСЂРѕРІРµСЂРєРё РєРѕРґР° Рё Р°РІС‚РѕСЂРёР·Р°С†РёРё / Р°РІС‚РѕСЂРµРіРёСЃС‚СЂР°С†РёРё
 
 $arResponse = [];
 
@@ -10,7 +10,7 @@ do {
 
 
     if (!\Bitrix\Main\Loader::includeModule('bxmaker.authuserphone')) {
-        $arResponse['error'] = 'Не установлен модуль авторизации по номеру телефона';
+        $arResponse['error'] = 'РќРµ СѓСЃС‚Р°РЅРѕРІР»РµРЅ РјРѕРґСѓР»СЊ Р°РІС‚РѕСЂРёР·Р°С†РёРё РїРѕ РЅРѕРјРµСЂСѓ С‚РµР»РµС„РѕРЅР°';
         break;
     }
 
@@ -25,12 +25,12 @@ do {
     $code = trim((string)$req->getPost('code'));
 
     if (!$oManagerAuthUserPhone->isValidPhone($phone)) {
-        $arResponse['error'] = 'Номер мобильного телефона указан не верно';
+        $arResponse['error'] = 'РќРѕРјРµСЂ РјРѕР±РёР»СЊРЅРѕРіРѕ С‚РµР»РµС„РѕРЅР° СѓРєР°Р·Р°РЅ РЅРµ РІРµСЂРЅРѕ';
         break;
     }
 
     if (strlen($code) <= 0) {
-        $arResponse['error'] = 'Не указан код из смс';
+        $arResponse['error'] = 'РќРµ СѓРєР°Р·Р°РЅ РєРѕРґ РёР· СЃРјСЃ';
         break;
     }
 
@@ -67,11 +67,11 @@ do {
         } else {
             $findInactiveResult = $oManagerAuthUserPhone->findUserIdByPhone($phone, false);
             if ($findInactiveResult->isSuccess()) {
-                throw new \Bxmaker\AuthUserPhone\Exception\BaseException('Пользователь заблокирован', 'ERROR_USER_ACTIVE');
+                throw new \Bxmaker\AuthUserPhone\Exception\BaseException('РџРѕР»СЊР·РѕРІР°С‚РµР»СЊ Р·Р°Р±Р»РѕРєРёСЂРѕРІР°РЅ', 'ERROR_USER_ACTIVE');
             }
         }
 
-        //регистрируем если надо
+        //СЂРµРіРёСЃС‚СЂРёСЂСѓРµРј РµСЃР»Рё РЅР°РґРѕ
         if (is_null($userId) && $oManagerAuthUserPhone->param()->isEnabledAutoRegister()) {
             $registerResult = $oManagerAuthUserPhone->register($phone);
             if (!$registerResult->isSuccess()) {
@@ -81,9 +81,9 @@ do {
             $userId = (int)$registerResult->getResult();
         }
 
-        // не удалось определить
+        // РЅРµ СѓРґР°Р»РѕСЃСЊ РѕРїСЂРµРґРµР»РёС‚СЊ
         if (is_null($userId)) {
-            throw new \Bxmaker\AuthUserPhone\Exception\BaseException('Пользователь не найден', 'ERROR_USER_ID');
+            throw new \Bxmaker\AuthUserPhone\Exception\BaseException('РџРѕР»СЊР·РѕРІР°С‚РµР»СЊ РЅРµ РЅР°Р№РґРµРЅ', 'ERROR_USER_ID');
         }
 
         $authResult = $oManagerAuthUserPhone->authorize($userId);
@@ -92,7 +92,7 @@ do {
         }
 
 
-        $arResponse['msg'] = 'Авторизация прошла успешно';
+        $arResponse['msg'] = 'РђРІС‚РѕСЂРёР·Р°С†РёСЏ РїСЂРѕС€Р»Р° СѓСЃРїРµС€РЅРѕ';
 
 
     } catch (\Bxmaker\AuthUserPhone\Exception\BaseException $ex) {

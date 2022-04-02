@@ -1,6 +1,6 @@
 <?php
 
-// отправка временного кода в смс
+// РѕС‚РїСЂР°РІРєР° РІСЂРµРјРµРЅРЅРѕРіРѕ РєРѕРґР° РІ СЃРјСЃ
 
 $arResponse = [];
 
@@ -9,7 +9,7 @@ $formattdPhone = '';
 do {
 
     if (!\Bitrix\Main\Loader::includeModule('bxmaker.authuserphone')) {
-        $arResponse['error'] = 'Не установлен модуль авторизации по номеру телефона';
+        $arResponse['error'] = 'РќРµ СѓСЃС‚Р°РЅРѕРІР»РµРЅ РјРѕРґСѓР»СЊ Р°РІС‚РѕСЂРёР·Р°С†РёРё РїРѕ РЅРѕРјРµСЂСѓ С‚РµР»РµС„РѕРЅР°';
         break;
     }
 
@@ -22,7 +22,7 @@ do {
     $phone = $oManagerAuthUserPhone->getPreparedPhone((string)$req->getPost('phone'));
 
     if (!$oManagerAuthUserPhone->isValidPhone($phone)) {
-        $arResponse['error'] = 'Номер мобильного телефона указан не верно';
+        $arResponse['error'] = 'РќРѕРјРµСЂ РјРѕР±РёР»СЊРЅРѕРіРѕ С‚РµР»РµС„РѕРЅР° СѓРєР°Р·Р°РЅ РЅРµ РІРµСЂРЅРѕ';
         break;
     }
 

@@ -5,11 +5,11 @@ require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/modules/main/include/prolog_before.
  * @var $APPLICATION \CMain
  */
 
-// ïîäêë÷þåíèå ðàñøèðåíèÿ íåîáõîäèìîãî äëÿ ðàáîòû êîìïîíåíòà â ïóáëè÷íéî ÷àñòè
+// Ð¿Ð¾Ð´ÐºÐ»Ñ‡ÑŽÐµÐ½Ð¸Ðµ Ñ€Ð°ÑÑˆÐ¸Ñ€ÐµÐ½Ð¸Ñ Ð½ÐµÐ¾Ð±Ñ…Ð¾Ð´Ð¸Ð¼Ð¾Ð³Ð¾ Ð´Ð»Ñ Ñ€Ð°Ð±Ð¾Ñ‚Ñ‹ ÐºÐ¾Ð¼Ð¿Ð¾Ð½ÐµÐ½Ñ‚Ð° Ð² Ð¿ÑƒÐ±Ð»Ð¸Ñ‡Ð½Ð¹Ð¾ Ñ‡Ð°ÑÑ‚Ð¸
 \Bitrix\Main\UI\Extension::load('bxmaker.authuserphone.simple');
 echo \CJSCore::GetHTML(['bxmaker.authuserphone.simple']);
 
-// ïîäêëþ÷åíèå êîìîïåííòà
+// Ð¿Ð¾Ð´ÐºÐ»ÑŽÑ‡ÐµÐ½Ð¸Ðµ ÐºÐ¾Ð¼Ð¾Ð¿ÐµÐ½Ð½Ñ‚Ð°
 $APPLICATION->IncludeComponent(
     'bxmaker:authuserphone.simple',
     '',

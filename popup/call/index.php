@@ -24,15 +24,15 @@ require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/header.php");
         <?php
         if ($USER->IsAuthorized()) {
             ?>
-            <div>Вы успешно авторизованы</div>
+            <div>Р’С‹ СѓСЃРїРµС€РЅРѕ Р°РІС‚РѕСЂРёР·РѕРІР°РЅС‹</div>
             <div>
-                <a href="?logout=y">Выйти</a>
+                <a href="?logout=y">Р’С‹Р№С‚Рё</a>
             </div>
             <?php
         } else {
             ?>
-            <button type="button" class="example-auth__btn example-auth__btn--auth">Вход</button>
-            <button type="button" class="example-auth__btn example-auth__btn--reg">Регистрация</button>
+            <button type="button" class="example-auth__btn example-auth__btn--auth">Р’С…РѕРґ</button>
+            <button type="button" class="example-auth__btn example-auth__btn--reg">Р РµРіРёСЃС‚СЂР°С†РёСЏ</button>
 
             <?php
         }

@@ -15,7 +15,7 @@ $APPLICATION->IncludeComponent(
 );
 
 
-//это нужно обязательно чтобы подгрузились стили и срипты, языковые фразы
+//СЌС‚Рѕ РЅСѓР¶РЅРѕ РѕР±СЏР·Р°С‚РµР»СЊРЅРѕ С‡С‚РѕР±С‹ РїРѕРґРіСЂСѓР·РёР»РёСЃСЊ СЃС‚РёР»Рё Рё СЃСЂРёРїС‚С‹, СЏР·С‹РєРѕРІС‹Рµ С„СЂР°Р·С‹
 echo \Bitrix\Main\Page\Asset::getInstance()->getCss();
 echo \Bitrix\Main\Page\Asset::getInstance()->getJs(\Bitrix\Main\Page\AssetShowTargetType::TEMPLATE_PAGE);
 echo \Bitrix\Main\Page\Asset::getInstance()->getStrings(\Bitrix\Main\Page\AssetLocation::AFTER_CSS);
@@ -25,17 +25,17 @@ echo \Bitrix\Main\Page\Asset::getInstance()->getStrings(\Bitrix\Main\Page\AssetL
 
     <script type="text/javascript">
 
-        //запускаем с маленькой задержкой
+        //Р·Р°РїСѓСЃРєР°РµРј СЃ РјР°Р»РµРЅСЊРєРѕР№ Р·Р°РґРµСЂР¶РєРѕР№
         setTimeout(function () {
 
             $('.bxmaker-authuserphone-login').each(function () {
                 new BxmakerAuthUserphone(jQuery(this), jQuery);
             });
 
-            // здесь же можно налозить маску на поля
+            // Р·РґРµСЃСЊ Р¶Рµ РјРѕР¶РЅРѕ РЅР°Р»РѕР·РёС‚СЊ РјР°СЃРєСѓ РЅР° РїРѕР»СЏ
             var mask = '7 (999) 999-99-99';
 
-            // следующая инструкция позволяет использоваться масску из настроек на решениях от Аспро
+            // СЃР»РµРґСѓСЋС‰Р°СЏ РёРЅСЃС‚СЂСѓРєС†РёСЏ РїРѕР·РІРѕР»СЏРµС‚ РёСЃРїРѕР»СЊР·РѕРІР°С‚СЊСЃСЏ РјР°СЃСЃРєСѓ РёР· РЅР°СЃС‚СЂРѕРµРє РЅР° СЂРµС€РµРЅРёСЏС… РѕС‚ РђСЃРїСЂРѕ
             if (!!window.arAsproOptions && !!arAsproOptions['THEME'] && !!arAsproOptions['THEME']['PHONE_MASK']) {
                 mask = arAsproOptions['THEME']['PHONE_MASK'];
             }

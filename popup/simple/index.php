@@ -1,5 +1,9 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/header.php");
+
+
+// файл страницы, на которой при нажатии на кнопку появится popup окно с компонентов авторизации/регистрации
+
 ?>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js"

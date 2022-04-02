@@ -47,7 +47,7 @@ function bxmaker_authuserphone_onUserAdd(\Bitrix\Main\Event $event)
     //идентификтаор свойства для хранения номера телефона
     $phonePropId = 3;
 
-    $arFields = $event->getParameter('FIELDS');
+    $fields = $event->getParameter('fields');
 
 
     //массив свойств создаваемого профиля
@@ -55,7 +55,7 @@ function bxmaker_authuserphone_onUserAdd(\Bitrix\Main\Event $event)
         [
             "ORDER_PROPS_ID" => $phonePropId, //идентификатор свойства заказа с номером телефона для конкретного типа плательщика
             "NAME" => "Телефон",
-            "VALUE" => $arFields['PHONE']
+            "VALUE" => $fields['PHONE']
         ]
     ];
 
@@ -63,8 +63,8 @@ function bxmaker_authuserphone_onUserAdd(\Bitrix\Main\Event $event)
 
         //создаём новый профиль --------
         $arProfileFields = [
-            "NAME" => "Профиль покупателя (" . $arFields['PHONE'] . ')',
-            "USER_ID" => intval($arFields['USER_ID']),
+            "NAME" => "Профиль покупателя (" . $fields['PHONE'] . ')',
+            "USER_ID" => intval($fields['USER_ID']),
             "PERSON_TYPE_ID" => $personalTypeId
         ];
 

@@ -1,12 +1,13 @@
 <?php
 
 /**
- * Пример вызова соыбтия при разработке, вместо нажатия по кнопкам и ввода данных
- * состав парамтеров долежн соответствовать описанному в комментарии к константе
- * события в исодниках иили докумнетации
+ * Пример вызова события при разработке, вместо нажатия по кнопкам и ввода данных
+ * состав парамтеров должен соответствовать описанному в комментарии к константе
+ * события в исходниках иили документации
  */
 
-$bTest = false;
+//=========================================================================
+// отправка временного кода в смс
 $sendEventResult = \Bxmaker\AuthUserPhone\Manager::getInstance()->sendEvent(
     \BXmaker\AuthUserPhone\Manager::EVENT_ON_SEND_SMS_CODE,
     [
@@ -16,8 +17,27 @@ $sendEventResult = \Bxmaker\AuthUserPhone\Manager::getInstance()->sendEvent(
 );
 
 if ($sendEventResult->isSuccess()) {
-    if (!is_null($sendEventResult->getMore('TEST'))) {
-        $bTest = (bool) $sendEventResult->getMore('TEST');
-    }
+    echo '<pre>';
+    print_r($sendEventResult->getMore());
+    echo '</pre>';
+
 }
 
+
+//=========================================================================
+//  добален польвзаотель
+$oManager = \Bxmaker\AuthUserPhone\Manager::getInstance();
+$resultEvent = $oManager->sendEvent(
+    \BXmaker\AuthUserPhone\Manager::EVENT_ON_USER_ADD,
+    [
+        'PHONE' => '79991112233',
+        'PASSWORD' => 'pass',
+        'ID' => '1',
+        'USER_ID' => '1'
+    ]
+);
+if (!$resultEvent->isSuccess()) {
+    $error = true;
+} else {
+    $error = false;
+}

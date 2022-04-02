@@ -18,12 +18,11 @@ $sendEventResult = $oManager->sendEvent(
     \Bxmaker\AuthUserPhone\Manager::EVENT_ON_USER_ADD,
     [
         'PHONE' => '79991112233', // телефона
-        'PASSWORD' => 'testPassword'.time(), //пароль
+        'PASSWORD' => 'testPassword' . time(), //пароль
         'ID' => '10', //  идентификатор пользователя
         'USER_ID' => '10', //идентификатор пользвоателя
     ]
 );
-
 
 
 // Обработчик события,  который можно поместить в /bitrix/php_interface/init.php
@@ -38,22 +37,22 @@ $eventManager->addEventHandler(
 );
 
 
-
 // обработчики события
 function bxmaker_authuserphone_onUserAdd(\Bitrix\Main\Event $event)
 {
-    //идентификтаор типа плательщика
-    $personalTypeId = 1;
-    //идентификтаор свойства для хранения номера телефона
-    $phonePropId = 3;
+    global $APPLICATION;
 
     $fields = $event->getParameter('fields');
+
+
+    //идентификтаор типа плательщика
+    $personalTypeId = 1;
 
 
     //массив свойств создаваемого профиля
     $arProfileProps = [
         [
-            "ORDER_PROPS_ID" => $phonePropId, //идентификатор свойства заказа с номером телефона для конкретного типа плательщика
+            "ORDER_PROPS_ID" => 3, //идентификатор свойства заказа с номером телефона для конкретного типа плательщика
             "NAME" => "Телефон",
             "VALUE" => $fields['PHONE']
         ]
@@ -68,20 +67,27 @@ function bxmaker_authuserphone_onUserAdd(\Bitrix\Main\Event $event)
             "PERSON_TYPE_ID" => $personalTypeId
         ];
 
-        $profileId = CSaleOrderUserProps::Add($arProfileFields);
+        if ($profileId = CSaleOrderUserProps::Add($arProfileFields)) {
+//            echo 'Profile ID: '.$profileId.PHP_EOL;
 
-        //если профиль создан
-        if ($profileId) {
+            //если профиль создан
+            if ($profileId) {
 
-            //добавляем значения свойств к созданному ранее профилю
-            foreach ($arProfileProps as $arProp) {
+                //добавляем значения свойств к созданному ранее профилю
+                foreach ($arProfileProps as $arProp) {
 
-                $resultProp = CSaleOrderUserPropsValue::Add(array_merge($arProp, [
-                    "USER_PROPS_ID" => $profileId,
-                ]));
+                    $resultProp = CSaleOrderUserPropsValue::Add(array_merge($arProp, [
+                        "USER_PROPS_ID" => $profileId,
+                    ]));
+
+//                    echo 'ID: '.$resultProp.PHP_EOL;
+                }
             }
+        } else {
+//            echo $APPLICATION->GetException();
         }
     }
+
 
     $result = new \Bitrix\Main\EventResult(\Bitrix\Main\EventResult::SUCCESS, []);
     return $result;

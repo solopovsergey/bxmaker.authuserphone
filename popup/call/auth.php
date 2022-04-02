@@ -46,14 +46,14 @@ echo \Bitrix\Main\Page\Asset::getInstance()->getStrings(\Bitrix\Main\Page\AssetL
                 mask = arAsproOptions['THEME']['PHONE_MASK'];
             }
 
-            var makParams = {
+            var maskParams = {
                 mask: mask,
                 showMaskOnHover: false,
             };
 
-            $('input[name=phone]').inputmask('mask', makParams);
-            $('input[name=register_phone]').inputmask('mask', makParams);
-            $('input[name=forget_phone]').inputmask('mask', makParams);
+            $('input[name=phone]').inputmask('mask', maskParams);
+            $('input[name=register_phone]').inputmask('mask', maskParams);
+            $('input[name=forget_phone]').inputmask('mask', maskParams);
 
         }, 600);
 

@@ -66,6 +66,9 @@ if (!$USER->IsAuthorized()): ?>
                     .auth_frame.popup {
                         width: auto;
                     }
+                    #popup_iframe_wrapper {
+                        z-index: 980 !important;
+                    }
                 </style>
                 <?
             }

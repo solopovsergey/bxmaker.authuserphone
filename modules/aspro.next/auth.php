@@ -69,10 +69,6 @@ if (!$USER->IsAuthorized()): ?>
                         right: 25px;
                         top: 20px;
                     }
-
-                    #popup_iframe_wrapper {
-                        z-index: 980 !important;
-                    }
                 </style>
                 <?
             }

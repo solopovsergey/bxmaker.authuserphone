@@ -7,7 +7,7 @@
 
 
 /**
- * @var \Bxmaker\Api\Handler $this
+ * @var \BXmaker\Api\Handler $this
  */
 
 
@@ -19,7 +19,7 @@ if (!\Bitrix\Main\Loader::includeModule('bxmaker.authuserphone')) {
 
 $oManagerAuthUserPhone = \BXmaker\AuthUserPhone\Manager::getInstance();
 
-$oFormat = new \Bxmaker\AuthUserPhone\Format();
+$oFormat = new \BXmaker\AuthUserPhone\Format();
 
 $phone = $oManagerAuthUserPhone->getPreparedPhone((string)$this->get('phone'));
 
@@ -80,7 +80,7 @@ try {
     } else {
         $findInactiveResult = $oManagerAuthUserPhone->findUserIdByPhone($phone, false);
         if ($findInactiveResult->isSuccess()) {
-            throw new \Bxmaker\AuthUserPhone\Exception\BaseException('Пользователь заблокирован', 'ERROR_USER_ACTIVE');
+            throw new \BXmaker\AuthUserPhone\Exception\BaseException('Пользователь заблокирован', 'ERROR_USER_ACTIVE');
         }
     }
 
@@ -96,7 +96,7 @@ try {
 
     // не удалось определить
     if (is_null($userId)) {
-        throw new \Bxmaker\AuthUserPhone\Exception\BaseException('Пользователь не найден', 'ERROR_USER_ID');
+        throw new \BXmaker\AuthUserPhone\Exception\BaseException('Пользователь не найден', 'ERROR_USER_ID');
     }
 
     $authResult = $oManagerAuthUserPhone->authorize($userId);
@@ -111,7 +111,7 @@ try {
     ));
 
 
-} catch (\Bxmaker\AuthUserPhone\Exception\BaseException $ex) {
+} catch (\BXmaker\AuthUserPhone\Exception\BaseException $ex) {
     $this->setError(
         $ex->getMessage(),
         $ex->getCustomCode(),

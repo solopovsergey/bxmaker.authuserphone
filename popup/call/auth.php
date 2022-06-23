@@ -33,10 +33,10 @@ echo \Bitrix\Main\Page\Asset::getInstance()->getStrings(\Bitrix\Main\Page\AssetL
 
             $('.bxmaker-authuserphone-call.inited').removeClass('inited');
 
-            window.BxmakerAuthUserphoneCall = [];
+            window.BXmakerAuthUserphoneCall = [];
 
 
-            BxmakerAuthUserphoneCallWorker();
+            BXmakerAuthUserphoneCallWorker();
 
             // здесь же можно налозить маску на поля
             var mask = '7 (999) 999-99-99';

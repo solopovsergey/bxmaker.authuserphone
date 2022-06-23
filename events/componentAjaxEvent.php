@@ -17,7 +17,7 @@ $eventManager->addEventHandler(
 function bxmaker_authuserphone_autoauth(\Bitrix\Main\Event $event)
 {
     /**
-     * @var $jsonResponse \Bxmaker\AuthUserPhone\Ajax\JsonResponse
+     * @var $jsonResponse \BXmaker\AuthUserPhone\Ajax\JsonResponse
      * @var $component \BXmakerAuthUserPhoneCallComponent
      */
     $fields = $event->getParameter('fields');

@@ -15,7 +15,7 @@ if (!\Bitrix\Main\Loader::includeModule('bxmaker.authuserphone')) {
 
 $oManagerAuthUserPhone = \BXmaker\AuthUserPhone\Manager::getInstance();
 
-$oFormat = new \Bxmaker\AuthUserPhone\Format();
+$oFormat = new \BXmaker\AuthUserPhone\Format();
 
 $phone = $oManagerAuthUserPhone->getPreparedPhone((string)$this->get('phone'));
 
@@ -66,7 +66,7 @@ try {
         ]
     );
 
-} catch (\Bxmaker\AuthUserPhone\Exception\BaseException $ex) {
+} catch (\BXmaker\AuthUserPhone\Exception\BaseException $ex) {
     $this->setError(
         $ex->getMessage(),
         $ex->getCustomCode(),

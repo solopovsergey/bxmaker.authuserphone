@@ -17,7 +17,7 @@ do {
 
     $oManagerAuthUserPhone = \BXmaker\AuthUserPhone\Manager::getInstance();
 
-    $oFormat = new \Bxmaker\AuthUserPhone\Format();
+    $oFormat = new \BXmaker\AuthUserPhone\Format();
 
     $req = \Bitrix\Main\Application::getInstance()->getContext()->getRequest();
 
@@ -67,7 +67,7 @@ do {
         } else {
             $findInactiveResult = $oManagerAuthUserPhone->findUserIdByPhone($phone, false);
             if ($findInactiveResult->isSuccess()) {
-                throw new \Bxmaker\AuthUserPhone\Exception\BaseException('Пользователь заблокирован', 'ERROR_USER_ACTIVE');
+                throw new \BXmaker\AuthUserPhone\Exception\BaseException('Пользователь заблокирован', 'ERROR_USER_ACTIVE');
             }
         }
 
@@ -83,7 +83,7 @@ do {
 
         // не удалось определить
         if (is_null($userId)) {
-            throw new \Bxmaker\AuthUserPhone\Exception\BaseException('Пользователь не найден', 'ERROR_USER_ID');
+            throw new \BXmaker\AuthUserPhone\Exception\BaseException('Пользователь не найден', 'ERROR_USER_ID');
         }
 
         $authResult = $oManagerAuthUserPhone->authorize($userId);
@@ -95,7 +95,7 @@ do {
         $arResponse['msg'] = 'Авторизация прошла успешно';
 
 
-    } catch (\Bxmaker\AuthUserPhone\Exception\BaseException $ex) {
+    } catch (\BXmaker\AuthUserPhone\Exception\BaseException $ex) {
         $arResponse['error'] = $ex->getMessage();
         $arResponse['more'] = $ex->getCustomCode();
     }

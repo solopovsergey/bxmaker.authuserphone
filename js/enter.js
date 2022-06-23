@@ -2,7 +2,7 @@
 
 /*
 // так вызывается событие
-BX.Vue.event.$emit('BxmakerAuthuserphoneEnterAjaxResponse', {
+BX.Vue.event.$emit('BXmakerAuthuserphoneEnterAjaxResponse', {
     request: {}, // данные в запросе
     result: {}, // полученный результат
 });
@@ -14,14 +14,14 @@ BX.Vue.event.$emit('BxmakerAuthuserphoneEnterAjaxResponse', {
 //  заменить XXXX на номер счетчика
 
 
-BX.Vue.event.$on('BxmakerAuthuserphoneEnterAjaxResponse',(data) => {
+BX.Vue.event.$on('BXmakerAuthuserphoneEnterAjaxResponse',(data) => {
 
     var counterId = 'XXX';
     var rand = data.request.rand;
 
     //получить доступ к объекту класса, через который можно управлять комопнентом
     // переменная определяется в шаблоне компонента
-    var obj = window['BxmakerAuthuserphoneEnter' +  rand];
+    var obj = window['BXmakerAuthuserphoneEnter' +  rand];
 
     // доступ к корневому vue
     var instance = obj.instance;

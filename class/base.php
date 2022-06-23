@@ -5,7 +5,7 @@
 // Подклчюение модуля
 
 if (\Bitrix\Main\Loader::includeModule('bxmaker.authuserphone')) {
-    $oManager = \Bxmaker\AuthUserPhone\Manager::getInstance();
+    $oManager = \BXmaker\AuthUserPhone\Manager::getInstance();
 
     //операции ...
     $phone = $oManager->getPreparedPhone('8 999-111-22-33');
@@ -15,7 +15,7 @@ if (\Bitrix\Main\Loader::includeModule('bxmaker.authuserphone')) {
 // Result
 // всегда либо успешно либо содержит ошибку
 
-$result = new \Bxmaker\AuthUserPhone\Result();
+$result = new \BXmaker\AuthUserPhone\Result();
 
 // Передаем основной результат
 $result->setResult(10);
@@ -35,15 +35,15 @@ if ($result->isSuccess()) {
 // Работа с ошибками
 // Если в процессе операции возникла ошибка, то можем ее получить и обработать.
 // Возвращаеться всегда будет объект результата содержащий в себе ошибку,
-//  объект класса \Bxmaker\Authuserphone\Error
+//  объект класса \BXmaker\Authuserphone\Error
 
 // Работа с ошибкой
-$result = new \Bxmaker\AuthUserPhone\Result();
+$result = new \BXmaker\AuthUserPhone\Result();
 $result->createError(
     'Телефон не валидный',
     'ERROR_PHONE_INVALID',
     [
-        'captcha' => \Bxmaker\AuthUserPhone\Manager::getInstance()->captcha()->getForJs()
+        'captcha' => \BXmaker\AuthUserPhone\Manager::getInstance()->captcha()->getForJs()
     ]
 );
 
@@ -53,7 +53,7 @@ $result->createError(
     'Введите код с картинки',
     'ERROR_NEED_CAPTCHA',
     [
-        'captcha' => \Bxmaker\AuthUserPhone\Manager::getInstance()->captcha()->getForJs()
+        'captcha' => \BXmaker\AuthUserPhone\Manager::getInstance()->captcha()->getForJs()
     ]
 );
 
@@ -73,7 +73,7 @@ echo $result->getFirstError()->getMessage(); //  Error
 // Когда нужно выбросить исключение при наличии ошибки
 if (!$result->isSuccess()) {
     $result->throwException();
-    // throw new \Bxmaker\AuthUserPhone\Exception\BaseException()
+    // throw new \BXmaker\AuthUserPhone\Exception\BaseException()
 }
 
 
@@ -93,10 +93,10 @@ if ($oManager->isValidPhone($phone)) {
 
 // Подготовка
 // по ip адресу
-$oManager->limitIP()->setType(\Bxmaker\AuthUserPhone\Manager::CONFIRM_TYPE_SMS_CODE);
+$oManager->limitIP()->setType(\BXmaker\AuthUserPhone\Manager::CONFIRM_TYPE_SMS_CODE);
 
 //для лимитов с привязкой к номеру, передаем номер
-$oManager->limit()->setType(\Bxmaker\AuthUserPhone\Manager::CONFIRM_TYPE_SMS_CODE)->setPhone($phone);
+$oManager->limit()->setType(\BXmaker\AuthUserPhone\Manager::CONFIRM_TYPE_SMS_CODE)->setPhone($phone);
 
 // проверяем лимты
 // по ip адресу

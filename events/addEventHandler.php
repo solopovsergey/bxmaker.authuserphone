@@ -17,7 +17,7 @@ function bxmaker_authuserphone_onSendCode(\Bitrix\Main\Event $event)
 
     // выбросим исключение, текст которого отобразиться в публичной части
     if ($fields['PHONE'] == '79991112233') {
-        throw  new \Bxmaker\AuthUserPhone\Exception\BaseException(
+        throw  new \BXmaker\AuthUserPhone\Exception\BaseException(
             'На ваш номер запрещено отправлять временные коды',
             'ERROR_INVALID_PHONE'
         );

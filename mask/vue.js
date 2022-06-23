@@ -2,7 +2,7 @@
 // наложение маски в компонентах с использованием vue  - Simple, Enter, Edit
 
 if(BX && BX.Vue){
-    BX.Vue.mutateComponent('BxmakerAuthuserphoneInput',
+    BX.Vue.mutateComponent('BXmakerAuthuserphoneInput',
         {
             mounted: function () {
                 if (this.name === 'PHONE') {

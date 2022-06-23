@@ -31,7 +31,7 @@ echo \Bitrix\Main\Page\Asset::getInstance()->getStrings(\Bitrix\Main\Page\AssetL
         setTimeout(function () {
 
             $('.bxmaker-authuserphone-login').each(function () {
-                new BxmakerAuthUserphone(jQuery(this), jQuery);
+                new BXmakerAuthUserphone(jQuery(this), jQuery);
             });
 
             // здесь же можно налозить маску на поля

@@ -7,7 +7,7 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) {
 // запрос на обнволение капчи
 
 /**
- * @var \Bxmaker\Api\Handler $this
+ * @var \BXmaker\Api\Handler $this
  */
 
 

@@ -13,9 +13,9 @@
 
 // Пример генерации события, для проверки обработчика ниже
 
-$oManager = \Bxmaker\AuthUserPhone\Manager::getInstance();
+$oManager = \BXmaker\AuthUserPhone\Manager::getInstance();
 $sendEventResult = $oManager->sendEvent(
-    \Bxmaker\AuthUserPhone\Manager::EVENT_ON_USER_ADD,
+    \BXmaker\AuthUserPhone\Manager::EVENT_ON_USER_ADD,
     [
         'PHONE' => '79991112233', // телефона
         'PASSWORD' => 'testPassword' . time(), //пароль

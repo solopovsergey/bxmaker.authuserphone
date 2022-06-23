@@ -33,7 +33,7 @@ if (!$USER->IsAuthorized()): ?>
 
         if (\Bitrix\Main\Loader::includeModule('bxmaker.authuserphone')) {
 
-            $oManager = \Bxmaker\AuthUserPhone\Manager::getInstance();
+            $oManager = \BXmaker\AuthUserPhone\Manager::getInstance();
 
             //если модуль для текущего сайта включен
             if ($oManager->isEnabled()) {

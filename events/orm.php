@@ -5,7 +5,7 @@
 $eventManager = \Bitrix\Main\EventManager::getInstance();
 $eventManager->addEventHandler(
     "bxmaker.authuserphone",
-    "\Bxmaker\AuthUserPhone\Manager\Limit::OnBeforeAdd",
+    "\BXmaker\AuthUserPhone\Manager\Limit::OnBeforeAdd",
     "bxmaker_authuserphone_manager_limit_onBeforeAdd"
 );
 

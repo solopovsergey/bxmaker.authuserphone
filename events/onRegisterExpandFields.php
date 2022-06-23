@@ -31,7 +31,7 @@ if (\Bitrix\Main\Loader::includeModule('bxmaker.authuserphone')) {
         }
         else
         {
-            throw new \Bxmaker\AuthUserPhone\Exception\BaseException('Не заполнено поле обязательное - Код приглашения', 'ERROR_INVITE_CODE');
+            throw new \BXmaker\AuthUserPhone\Exception\BaseException('Не заполнено поле обязательное - Код приглашения', 'ERROR_INVITE_CODE');
         }
     }
 }

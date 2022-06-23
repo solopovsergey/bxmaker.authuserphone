@@ -15,7 +15,7 @@ do {
 
     $oManagerAuthUserPhone = \BXmaker\AuthUserPhone\Manager::getInstance();
 
-    $oFormat = new \Bxmaker\AuthUserPhone\Format();
+    $oFormat = new \BXmaker\AuthUserPhone\Format();
 
     $req = \Bitrix\Main\Application::getInstance()->getContext()->getRequest();
 
@@ -56,7 +56,7 @@ do {
         $arResponse['msg'] = $startSmsCodeResult->getMore('MSG');
 
 
-    } catch (\Bxmaker\AuthUserPhone\Exception\BaseException $ex) {
+    } catch (\BXmaker\AuthUserPhone\Exception\BaseException $ex) {
 
         $arResponse['error'] = $ex->getMessage();
         $arResponse['more'] = $ex->getCustomCode();

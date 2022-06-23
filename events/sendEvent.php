@@ -8,7 +8,7 @@
 
 //=========================================================================
 // отправка временного кода в смс
-$sendEventResult = \Bxmaker\AuthUserPhone\Manager::getInstance()->sendEvent(
+$sendEventResult = \BXmaker\AuthUserPhone\Manager::getInstance()->sendEvent(
     \BXmaker\AuthUserPhone\Manager::EVENT_ON_SEND_SMS_CODE,
     [
         'PHONE' => '79991112233',
@@ -26,7 +26,7 @@ if ($sendEventResult->isSuccess()) {
 
 //=========================================================================
 //  добален польвзаотель
-$oManager = \Bxmaker\AuthUserPhone\Manager::getInstance();
+$oManager = \BXmaker\AuthUserPhone\Manager::getInstance();
 $resultEvent = $oManager->sendEvent(
     \BXmaker\AuthUserPhone\Manager::EVENT_ON_USER_ADD,
     [

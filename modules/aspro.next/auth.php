@@ -22,7 +22,9 @@ if (!$USER->IsAuthorized()): ?>
         if ($_REQUEST['backurl'] != $_SERVER['REQUEST_URI']) {
             $_SERVER['QUERY_STRING'] = '';
             $_SERVER['REQUEST_URI'] = $_REQUEST['backurl'];
-            $APPLICATION->reinitPath();
+            //$APPLICATION->reinitPath();
+            $APPLICATION->sDocPath2 = GetPagePath(false, true);
+            $APPLICATION->sDirPath = GetDirPath($APPLICATION->sDocPath2);
         }
     } ?>
     <a href="#" class="close jqmClose"><?= CNext::showIconSvg('', SITE_TEMPLATE_PATH . '/images/svg/Close.svg') ?></a>

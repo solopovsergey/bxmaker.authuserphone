@@ -1,0 +1,57 @@
+
+/* -------- bxmaker.authuserphone ---------- */
+
+.bxmaker-authuserphone-enter,
+.bxmaker-authuserphone-simple {
+    margin-bottom:150px;
+}
+
+.side-panel .bxmaker-authuserphone-enter,
+.side-panel .bxmaker-authuserphone-simple {
+    width:100%;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+body .bxmaker-authuserphone-button .bxmaker-authuserphone-button__inner {
+    background-color: var(--main-color);
+}
+
+body .bxmaker-authuserphone-button:hover .bxmaker-authuserphone-button__inner {
+    background-color: var(--main-color-hover);
+}
+
+body .bxmaker-authuserphone-input-phone--focus .bxmaker-authuserphone-input-phone__field,
+body  .bxmaker-authuserphone-input-phone--hover .bxmaker-authuserphone-input-phone__field,
+body  .bxmaker-authuserphone-input-phone:hover .bxmaker-authuserphone-input-phone__field
+{
+    border-color: var(--main-color-hover);
+}
+
+body .bxmaker-authuserphone-input--focus .bxmaker-authuserphone-input__field,
+body .bxmaker-authuserphone-input--hover .bxmaker-authuserphone-input__field,
+body .bxmaker-authuserphone-input:hover .bxmaker-authuserphone-input__field
+{
+    border-color: var(--main-color-hover);
+}
+
+
+body .bxmaker-authuserphone-input-password--focus .bxmaker-authuserphone-input-password__field,
+body .bxmaker-authuserphone-input-password--hover .bxmaker-authuserphone-input-password__field,
+body .bxmaker-authuserphone-input-password:hover .bxmaker-authuserphone-input-password__field
+{
+    border-color: var(--main-color-hover);
+}
+
+body a.bxmaker-authuserphone-link,
+body a.bxmaker-authuserphone-link:visited
+{
+    color: var(--main-color);
+}
+
+body a.bxmaker-authuserphone-link:active,
+body a.bxmaker-authuserphone-link:hover
+{
+    color: var(--main-color-hover);
+}
+

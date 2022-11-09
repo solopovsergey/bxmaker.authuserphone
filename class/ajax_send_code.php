@@ -15,8 +15,6 @@ do {
 
     $oManagerAuthUserPhone = \BXmaker\AuthUserPhone\Manager::getInstance();
 
-    $oFormat = new \BXmaker\AuthUserPhone\Format();
-
     $req = \Bitrix\Main\Application::getInstance()->getContext()->getRequest();
 
     $phone = $oManagerAuthUserPhone->getPreparedPhone((string)$req->getPost('phone'));
@@ -26,7 +24,7 @@ do {
         break;
     }
 
-    $formattdPhone = $oFormat->getFormatedPhone($phone, true, true, true, true);
+    $formattdPhone = $oManagerAuthUserPhone->format()->international($phone);
 
     try {
 

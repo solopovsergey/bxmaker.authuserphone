@@ -24,7 +24,7 @@ if (!$oManagerAuthUserPhone->isValidPhone($phone)) {
     return false;
 }
 
-$formattdPhone = $oFormat->getFormatedPhone($phone, true, true, true, true);
+$formattdPhone = $oManagerAuthUserPhone->format()->international($phone);
 
 try {
 

@@ -7,10 +7,6 @@ require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/modules/main/include/prolog_before.
  * @var $APPLICATION \CMain
  */
 
-// подклчюение расширения необходимого для работы компонента в публичнйо части
-\Bitrix\Main\UI\Extension::load('bxmaker.authuserphone.simple');
-echo \CJSCore::GetHTML(['bxmaker.authuserphone.simple']);
-
 // подключение комопеннта
 $APPLICATION->IncludeComponent(
     'bxmaker:authuserphone.simple',

@@ -21,7 +21,6 @@ if (!\Bitrix\Main\Loader::includeModule('bxmaker.authuserphone')) {
 
 $oManagerAuthUserPhone = \BXmaker\AuthUserPhone\Manager::getInstance();
 
-$oFormat = new \BXmaker\AuthUserPhone\Format();
 
 $phone = $oManagerAuthUserPhone->getPreparedPhone((string)$this->get('phone'));
 
@@ -30,7 +29,7 @@ if (!$oManagerAuthUserPhone->isValidPhone($phone)) {
     return false;
 }
 
-$formattdPhone = $oFormat->getFormatedPhone($phone, true, true, true, true);
+$formattdPhone = $oManagerAuthUserPhone->format()->international($phone);
 
 try {
     $captchaId = trim($this->get('captchaId'));
@@ -102,6 +101,8 @@ try {
         $authResult->throwException();
     }
 
+    // елси не используется authorize, очищает текущие проверки
+    //$oManagerAuthUserPhone->finishAction($phone);
 
     $this->setResult(array(
         'msg' => 'Авторизация прошла успешно',

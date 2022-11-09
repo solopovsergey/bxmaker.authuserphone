@@ -46,15 +46,9 @@ if (!$USER->IsAuthorized()): ?>
 
                 $bSkip = true;
 
-
-                // подклчюение расширения необходимого для работы компонента в публичнйо части
-                \Bitrix\Main\UI\Extension::load('bxmaker.authuserphone.simple');
-                echo \CJSCore::GetHTML(['bxmaker.authuserphone.simple']);
-
-
                 // подключение комопеннта
                 $APPLICATION->IncludeComponent(
-                    'bxmaker:authuserphone.simple',
+                    $oManager->param()->getDefaultComponent(),
                     '',
                     [
                         'COMPOSITE_FRAME_MODE' => 'N'

@@ -12,7 +12,8 @@ $APPLICATION->IncludeComponent(
     'bxmaker:authuserphone.call',
     '',
     [
-        'COMPOSITE_FRAME_MODE' => 'N'
+        'COMPOSITE_FRAME_MODE' => 'N',
+        'RAND_STRING' => 'customAjax',
     ]
 );
 

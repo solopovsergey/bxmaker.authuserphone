@@ -47,7 +47,8 @@ if (!$USER->IsAuthorized()): ?>
                     $oManager->param()->getDefaultComponent(),
                     '',
                     [
-                        'COMPOSITE_FRAME_MODE' => 'N'
+                        'COMPOSITE_FRAME_MODE' => 'N',
+                        'RAND_STRING' => 'customAjax',
                     ]
                 );
 

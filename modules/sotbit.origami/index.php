@@ -28,7 +28,8 @@ if ($_REQUEST['ajax_mode'] == 'Y') {
                     $oManager->param()->getDefaultComponent(),
                     '',
                     [
-                        'COMPOSITE_FRAME_MODE' => 'N'
+                        'COMPOSITE_FRAME_MODE' => 'N',
+                        'RAND_STRING' => 'customAjax',
                     ]
                 );
             }

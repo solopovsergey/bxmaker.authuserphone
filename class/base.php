@@ -12,6 +12,9 @@ if (\Bitrix\Main\Loader::includeModule('bxmaker.authuserphone')) {
     echo $phone; // 79991112233
 }
 
+
+$oManager = \BXmaker\AuthUserPhone\Manager::getInstance();
+
 // Result
 // всегда либо успешно либо содержит ошибку
 
@@ -164,7 +167,7 @@ if (!$registerResult->isSuccess()) {
 $userId = (int)$registerResult->getResult();
 
 // Получение настроек
-$oManager->param()->isEnabledAutoRegister();
+$oManager->option()->isEnabledAutoRegister();
 
 
 // Смена сайта

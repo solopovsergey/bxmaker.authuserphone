@@ -8,7 +8,7 @@ use BXmaker\AuthUserPhone\Result;
 Loc::loadLanguageFile(__FILE__);
 
 /**
- * Пример своего сервиса для подтверждения номера телефона
+ * РџСЂРёРјРµСЂ СЃРІРѕРµРіРѕ СЃРµСЂРІРёСЃР° РґР»СЏ РїРѕРґС‚РІРµСЂР¶РґРµРЅРёСЏ РЅРѕРјРµСЂР° С‚РµР»РµС„РѕРЅР°
  * @package BXmaker\AuthUserPhone\Service
  */
 class Customservice extends \BXmaker\AuthUserPhone\Service\Base
@@ -23,29 +23,29 @@ class Customservice extends \BXmaker\AuthUserPhone\Service\Base
     }
 
     /**
-     * Название сервиса
+     * РќР°Р·РІР°РЅРёРµ СЃРµСЂРІРёСЃР°
      *
      * @return string
      */
     public static function getName()
     {
-        return 'Кастомный сервис';
+        return 'РљР°СЃС‚РѕРјРЅС‹Р№ СЃРµСЂРІРёСЃ';
     }
 
 
     /**
-     * Описание сервиса
+     * РћРїРёСЃР°РЅРёРµ СЃРµСЂРІРёСЃР°
      *
      * @return string
      */
     public static function getDescription()
     {
-        return 'Описание, подсказка как заполнить поля для подключения и тп ';
+        return 'РћРїРёСЃР°РЅРёРµ, РїРѕРґСЃРєР°Р·РєР° РєР°Рє Р·Р°РїРѕР»РЅРёС‚СЊ РїРѕР»СЏ РґР»СЏ РїРѕРґРєР»СЋС‡РµРЅРёСЏ Рё С‚Рї ';
     }
 
     /**
-     * Парамтеры сервиса для работы с ним, например логин и пароль.
-     * Получить занчение парамтера можно через $this->>getParams('LOGIN')
+     * РџР°СЂР°РјС‚РµСЂС‹ СЃРµСЂРІРёСЃР° РґР»СЏ СЂР°Р±РѕС‚С‹ СЃ РЅРёРј, РЅР°РїСЂРёРјРµСЂ Р»РѕРіРёРЅ Рё РїР°СЂРѕР»СЊ.
+     * РџРѕР»СѓС‡РёС‚СЊ Р·Р°РЅС‡РµРЅРёРµ РїР°СЂР°РјС‚РµСЂР° РјРѕР¶РЅРѕ С‡РµСЂРµР· $this->>getParams('LOGIN')
      *
      * @return array
      */
@@ -53,12 +53,12 @@ class Customservice extends \BXmaker\AuthUserPhone\Service\Base
     {
         return [
             'LOGIN' => [
-                'NAME' => 'логин',
+                'NAME' => 'Р»РѕРіРёРЅ',
                 'HELP' => '',
                 'TYPE' => 'STRING',
             ],
             'PASSWORD' => [
-                'NAME' => 'пароль',
+                'NAME' => 'РїР°СЂРѕР»СЊ',
                 'HELP' => '',
                 'TYPE' => 'PASSWORD',
             ]
@@ -66,7 +66,7 @@ class Customservice extends \BXmaker\AuthUserPhone\Service\Base
     }
 
     /**
-     * Првоерка доступности подтверждения через звонок от бота
+     * РџСЂРІРѕРµСЂРєР° РґРѕСЃС‚СѓРїРЅРѕСЃС‚Рё РїРѕРґС‚РІРµСЂР¶РґРµРЅРёСЏ С‡РµСЂРµР· Р·РІРѕРЅРѕРє РѕС‚ Р±РѕС‚Р°
      *
      * @return bool
      */
@@ -76,7 +76,7 @@ class Customservice extends \BXmaker\AuthUserPhone\Service\Base
     }
 
     /**
-     * Проверка доступности подтверждения верез смс код
+     * РџСЂРѕРІРµСЂРєР° РґРѕСЃС‚СѓРїРЅРѕСЃС‚Рё РїРѕРґС‚РІРµСЂР¶РґРµРЅРёСЏ РІРµСЂРµР· СЃРјСЃ РєРѕРґ
      *
      * @return bool
      */
@@ -86,7 +86,7 @@ class Customservice extends \BXmaker\AuthUserPhone\Service\Base
     }
 
     /**
-     * Подтверждение через звонок от пользователя доступен или нет
+     * РџРѕРґС‚РІРµСЂР¶РґРµРЅРёРµ С‡РµСЂРµР· Р·РІРѕРЅРѕРє РѕС‚ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ РґРѕСЃС‚СѓРїРµРЅ РёР»Рё РЅРµС‚
      *
      * @return bool
      */
@@ -96,7 +96,7 @@ class Customservice extends \BXmaker\AuthUserPhone\Service\Base
     }
 
     /**
-     * Класс поддерживает проверку через голосовой код
+     * РљР»Р°СЃСЃ РїРѕРґРґРµСЂР¶РёРІР°РµС‚ РїСЂРѕРІРµСЂРєСѓ С‡РµСЂРµР· РіРѕР»РѕСЃРѕРІРѕР№ РєРѕРґ
      * @return true
      */
     public static function isAvailableBotSpeech()
@@ -105,7 +105,7 @@ class Customservice extends \BXmaker\AuthUserPhone\Service\Base
     }
 
     /**
-     * Класс поддерживает проверку через SimPush
+     * РљР»Р°СЃСЃ РїРѕРґРґРµСЂР¶РёРІР°РµС‚ РїСЂРѕРІРµСЂРєСѓ С‡РµСЂРµР· SimPush
      * @return true
      */
     public static function isAvailableSimPush()
@@ -115,7 +115,7 @@ class Customservice extends \BXmaker\AuthUserPhone\Service\Base
 
 
     /**
-     * Отправка смс
+     * РћС‚РїСЂР°РІРєР° СЃРјСЃ
      *
      * @param $phone
      * @param $text
@@ -135,14 +135,14 @@ class Customservice extends \BXmaker\AuthUserPhone\Service\Base
             $data = $result->getResult();
 
             $result->setResult($data["message"]);
-            $result->setMore('EXT_ID', $data["message"]["id"] ?? null); // уникальный идентификатор сообщения в сервисе
+            $result->setMore('EXT_ID', $data["message"]["id"] ?? null); // СѓРЅРёРєР°Р»СЊРЅС‹Р№ РёРґРµРЅС‚РёС„РёРєР°С‚РѕСЂ СЃРѕРѕР±С‰РµРЅРёСЏ РІ СЃРµСЂРІРёСЃРµ
         }
 
         return $result;
     }
 
     /**
-     * Запрос у сервиса номера телеофна, для подтверждения звонком от пользователя
+     * Р—Р°РїСЂРѕСЃ Сѓ СЃРµСЂРІРёСЃР° РЅРѕРјРµСЂР° С‚РµР»РµРѕС„РЅР°, РґР»СЏ РїРѕРґС‚РІРµСЂР¶РґРµРЅРёСЏ Р·РІРѕРЅРєРѕРј РѕС‚ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ
      *
      * @param $phone
      *
@@ -152,16 +152,16 @@ class Customservice extends \BXmaker\AuthUserPhone\Service\Base
     {
         $result = $this->request('/call', [
             'phone' => $phone,
-            'webhookUrl' => $this->getCallbackUrl(), // url на которй будет отправлено уводмление от сервиса, после полступления звонка пот пользвоателя
+            'webhookUrl' => $this->getCallbackUrl(), // url РЅР° РєРѕС‚РѕСЂР№ Р±СѓРґРµС‚ РѕС‚РїСЂР°РІР»РµРЅРѕ СѓРІРѕРґРјР»РµРЅРёРµ РѕС‚ СЃРµСЂРІРёСЃР°, РїРѕСЃР»Рµ РїРѕР»СЃС‚СѓРїР»РµРЅРёСЏ Р·РІРѕРЅРєР° РїРѕС‚ РїРѕР»СЊР·РІРѕР°С‚РµР»СЏ
         ]);
 
         if ($result->isSuccess()) {
             $data = $result->getResult();
 
-            // униклаьны идентификатор
+            // СѓРЅРёРєР»Р°СЊРЅС‹ РёРґРµРЅС‚РёС„РёРєР°С‚РѕСЂ
             $result->setMore('EXT_ID', ($data["result"]["id"] ?? null));
 
-            // номер телеофна на который нужно будет позвонить пользвоателю, выводится в публичной части ему
+            // РЅРѕРјРµСЂ С‚РµР»РµРѕС„РЅР° РЅР° РєРѕС‚РѕСЂС‹Р№ РЅСѓР¶РЅРѕ Р±СѓРґРµС‚ РїРѕР·РІРѕРЅРёС‚СЊ РїРѕР»СЊР·РІРѕР°С‚РµР»СЋ, РІС‹РІРѕРґРёС‚СЃСЏ РІ РїСѓР±Р»РёС‡РЅРѕР№ С‡Р°СЃС‚Рё РµРјСѓ
             $result->setMore('CALL_TO', ($data["result"]["mobile"] ?? null));
         }
 
@@ -170,7 +170,7 @@ class Customservice extends \BXmaker\AuthUserPhone\Service\Base
 
 
     /**
-     * Звонок от бота, код в номере телефона
+     * Р—РІРѕРЅРѕРє РѕС‚ Р±РѕС‚Р°, РєРѕРґ РІ РЅРѕРјРµСЂРµ С‚РµР»РµС„РѕРЅР°
      *
      * @param $phone
      * @param $code
@@ -187,21 +187,21 @@ class Customservice extends \BXmaker\AuthUserPhone\Service\Base
         if ($result->isSuccess()) {
             $data = $result->getResult();
 
-            // если сервис отправляет свои коды, переопределим конечное значнеие
+            // РµСЃР»Рё СЃРµСЂРІРёСЃ РѕС‚РїСЂР°РІР»СЏРµС‚ СЃРІРѕРё РєРѕРґС‹, РїРµСЂРµРѕРїСЂРµРґРµР»РёРј РєРѕРЅРµС‡РЅРѕРµ Р·РЅР°С‡РЅРµРёРµ
             if (!empty($data["result"]["code"])) {
                 $code = (string)$data["result"]["code"];
             }
 
-            // униклаьны идентификатор
+            // СѓРЅРёРєР»Р°СЊРЅС‹ РёРґРµРЅС‚РёС„РёРєР°С‚РѕСЂ
             $result->setMore('EXT_ID', ($data["result"]["id"] ?? null));
-            // код, который должен указать пользователь, содержащийся в последних цыфрах входящего номера
+            // РєРѕРґ, РєРѕС‚РѕСЂС‹Р№ РґРѕР»Р¶РµРЅ СѓРєР°Р·Р°С‚СЊ РїРѕР»СЊР·РѕРІР°С‚РµР»СЊ, СЃРѕРґРµСЂР¶Р°С‰РёР№СЃСЏ РІ РїРѕСЃР»РµРґРЅРёС… С†С‹С„СЂР°С… РІС…РѕРґСЏС‰РµРіРѕ РЅРѕРјРµСЂР°
             $result->setMore('CODE', $code);
         }
         return $result;
     }
 
     /**
-     * Звонок от робота, который произнесен код
+     * Р—РІРѕРЅРѕРє РѕС‚ СЂРѕР±РѕС‚Р°, РєРѕС‚РѕСЂС‹Р№ РїСЂРѕРёР·РЅРµСЃРµРЅ РєРѕРґ
      * @param $phone
      * @param $code
      *
@@ -210,10 +210,10 @@ class Customservice extends \BXmaker\AuthUserPhone\Service\Base
     public function startBotSpeech($phone, $code)
     {
 
-        $text =  'Ваш одноразовый код';
+        $text =  'Р’Р°С€ РѕРґРЅРѕСЂР°Р·РѕРІС‹Р№ РєРѕРґ';
         $text .= '.-.'.implode('.-.', str_split($code));
 
-        // получится например - Ваш одноразовый код .-.1.-.5.-.3.-.8
+        // РїРѕР»СѓС‡РёС‚СЃСЏ РЅР°РїСЂРёРјРµСЂ - Р’Р°С€ РѕРґРЅРѕСЂР°Р·РѕРІС‹Р№ РєРѕРґ .-.1.-.5.-.3.-.8
 
         $arFields = [
             'phone' => $phone,
@@ -225,9 +225,9 @@ class Customservice extends \BXmaker\AuthUserPhone\Service\Base
         if ($result->isSuccess()) {
             $data = $result->getResult();
 
-            // униклаьны идентификатор
+            // СѓРЅРёРєР»Р°СЊРЅС‹ РёРґРµРЅС‚РёС„РёРєР°С‚РѕСЂ
             $result->setMore('EXT_ID', ($data["result"]["id"] ?? null));
-            // код, который должен указать пользователь, произнесенный роботом
+            // РєРѕРґ, РєРѕС‚РѕСЂС‹Р№ РґРѕР»Р¶РµРЅ СѓРєР°Р·Р°С‚СЊ РїРѕР»СЊР·РѕРІР°С‚РµР»СЊ, РїСЂРѕРёР·РЅРµСЃРµРЅРЅС‹Р№ СЂРѕР±РѕС‚РѕРј
             $result->setMore('CODE', $code);
         }
         return $result;
@@ -235,7 +235,7 @@ class Customservice extends \BXmaker\AuthUserPhone\Service\Base
 
 
     /**
-     * Старт отправки SIM-push
+     * РЎС‚Р°СЂС‚ РѕС‚РїСЂР°РІРєРё SIM-push
      */
     public function startSimPush($phone)
     {
@@ -246,14 +246,14 @@ class Customservice extends \BXmaker\AuthUserPhone\Service\Base
         if ($result->isSuccess()) {
             $response = $result->getResult();
 
-            // униклаьны идентификатор
+            // СѓРЅРёРєР»Р°СЊРЅС‹ РёРґРµРЅС‚РёС„РёРєР°С‚РѕСЂ
             $result->setMore('EXT_ID', ($data["result"]["id"] ?? null));
         }
         return $result;
     }
 
     /**
-     * Запрос обобщеный
+     * Р—Р°РїСЂРѕСЃ РѕР±РѕР±С‰РµРЅС‹Р№
      *
      * @param $url
      * @param $arFields
@@ -272,15 +272,15 @@ class Customservice extends \BXmaker\AuthUserPhone\Service\Base
 
         $data = $this->fromJson($oHttp->getResult());
 
-        //если не удалось распознать json ответ
+        //РµСЃР»Рё РЅРµ СѓРґР°Р»РѕСЃСЊ СЂР°СЃРїРѕР·РЅР°С‚СЊ json РѕС‚РІРµС‚
         if (!$data) {
             return $result->createError(
-                'Неизвестный ответ сервиса',
+                'РќРµРёР·РІРµСЃС‚РЅС‹Р№ РѕС‚РІРµС‚ СЃРµСЂРІРёСЃР°',
                 'SERVICE_ERROR_UNKNOW'
             );
         }
 
-        // если произошла ошибка
+        // РµСЃР»Рё РїСЂРѕРёР·РѕС€Р»Р° РѕС€РёР±РєР°
         if (!$data['success']) {
             return $result->createError(
                 sprintf('[%s] %s', $data['error']['code'], $data['error']['descr']),
@@ -288,7 +288,7 @@ class Customservice extends \BXmaker\AuthUserPhone\Service\Base
             );
         }
 
-        // иначе ответ передаем на дальнейшую обработку
+        // РёРЅР°С‡Рµ РѕС‚РІРµС‚ РїРµСЂРµРґР°РµРј РЅР° РґР°Р»СЊРЅРµР№С€СѓСЋ РѕР±СЂР°Р±РѕС‚РєСѓ
         $result->setResult($data);
 
         return $result;
@@ -296,7 +296,7 @@ class Customservice extends \BXmaker\AuthUserPhone\Service\Base
 
 
     /**
-     * Обработчик колбэка на звонок от пользвоателя, подтерждение от simPush
+     * РћР±СЂР°Р±РѕС‚С‡РёРє РєРѕР»Р±СЌРєР° РЅР° Р·РІРѕРЅРѕРє РѕС‚ РїРѕР»СЊР·РІРѕР°С‚РµР»СЏ, РїРѕРґС‚РµСЂР¶РґРµРЅРёРµ РѕС‚ simPush
      * @return false|void
      * @throws \Bitrix\Main\ArgumentException
      * @throws \Bitrix\Main\ObjectPropertyException
@@ -310,20 +310,20 @@ class Customservice extends \BXmaker\AuthUserPhone\Service\Base
         $id = (string)$req->getJsonList()->get('id');
 
         if (!$sid || !$md5 || !$id) {
-            echo 'не все параметры пришли';
+            echo 'РЅРµ РІСЃРµ РїР°СЂР°РјРµС‚СЂС‹ РїСЂРёС€Р»Рё';
             return false;
         }
 
 
         if ($md5 !== $this->getMDKey()) {
-            echo 'не верная подпись';
+            echo 'РЅРµ РІРµСЂРЅР°СЏ РїРѕРґРїРёСЃСЊ';
             return false;
         }
 
         $oHistory = new  HistoryTable();
 
 
-        // Авторизация пройдена успешно. Мы получили звонок с номера, который вы нам передавали.
+        // РђРІС‚РѕСЂРёР·Р°С†РёСЏ РїСЂРѕР№РґРµРЅР° СѓСЃРїРµС€РЅРѕ. РњС‹ РїРѕР»СѓС‡РёР»Рё Р·РІРѕРЅРѕРє СЃ РЅРѕРјРµСЂР°, РєРѕС‚РѕСЂС‹Р№ РІС‹ РЅР°Рј РїРµСЂРµРґР°РІР°Р»Рё.
         $dbrHistory = $oHistory->getList([
             'order' => ['ID' => 'DESC'],
             'filter' => [
@@ -334,10 +334,10 @@ class Customservice extends \BXmaker\AuthUserPhone\Service\Base
             'limit' => 1
         ]);
         if ($arHistory = $dbrHistory->fetch()) {
-            // отмечаем что звонок поступил
+            // РѕС‚РјРµС‡Р°РµРј С‡С‚Рѕ Р·РІРѕРЅРѕРє РїРѕСЃС‚СѓРїРёР»
             $this->setUserCallConfirmed($arHistory['ID']);
 
-            // если simPush, отмечаем что запрос принят на устройстве пользователя
+            // РµСЃР»Рё simPush, РѕС‚РјРµС‡Р°РµРј С‡С‚Рѕ Р·Р°РїСЂРѕСЃ РїСЂРёРЅСЏС‚ РЅР° СѓСЃС‚СЂРѕР№СЃС‚РІРµ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ
             $this->setSimPushConfirmed($arHistory['ID']);
         }
 
@@ -347,9 +347,9 @@ class Customservice extends \BXmaker\AuthUserPhone\Service\Base
 
 
     /**
-     * Адерс обработчика оповещений, вернет
+     * РђРґРµСЂСЃ РѕР±СЂР°Р±РѕС‚С‡РёРєР° РѕРїРѕРІРµС‰РµРЅРёР№, РІРµСЂРЅРµС‚
      * https://site.ru/bitrix/tools/bxmaker.authuserphone/callback.php?sid={$this->getId()}&md5={$this->getMDKey()};
-     * $this->getId() возвращает идентфииктаор настроек сервиса
+     * $this->getId() РІРѕР·РІСЂР°С‰Р°РµС‚ РёРґРµРЅС‚С„РёРёРєС‚Р°РѕСЂ РЅР°СЃС‚СЂРѕРµРє СЃРµСЂРІРёСЃР°
      *
      * @return int|null|string
      */
@@ -364,8 +364,8 @@ class Customservice extends \BXmaker\AuthUserPhone\Service\Base
     }
 
     /**
-     * Проверка наличия у сервиса колбэка (оповещений с их сервиса), если есть, то  будет использоваться обработчик,
-     * если нет колбэка, то при проверке статуса будет происходить тут же запрос к сервису
+     * РџСЂРѕРІРµСЂРєР° РЅР°Р»РёС‡РёСЏ Сѓ СЃРµСЂРІРёСЃР° РєРѕР»Р±СЌРєР° (РѕРїРѕРІРµС‰РµРЅРёР№ СЃ РёС… СЃРµСЂРІРёСЃР°), РµСЃР»Рё РµСЃС‚СЊ, С‚Рѕ  Р±СѓРґРµС‚ РёСЃРїРѕР»СЊР·РѕРІР°С‚СЊСЃСЏ РѕР±СЂР°Р±РѕС‚С‡РёРє,
+     * РµСЃР»Рё РЅРµС‚ РєРѕР»Р±СЌРєР°, С‚Рѕ РїСЂРё РїСЂРѕРІРµСЂРєРµ СЃС‚Р°С‚СѓСЃР° Р±СѓРґРµС‚ РїСЂРѕРёСЃС…РѕРґРёС‚СЊ С‚СѓС‚ Р¶Рµ Р·Р°РїСЂРѕСЃ Рє СЃРµСЂРІРёСЃСѓ
      *
      * @return bool
      */
